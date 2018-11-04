@@ -1,0 +1,50 @@
+###############################################################################
+#  In settings.py:
+#       DATABASES = {
+#            'default': {
+#                'ENGINE': 'django.db.backends.mysql',
+#                'HOST': 'mysql',
+#                ...
+#            }
+#        }
+#
+#  In PyCharm configurations:
+#       Host: 0.0.0.0 - Port: 8000
+#       Python interpreter: Select the docker ...
+###############################################################################
+version: "3.1"
+
+volumes:
+    db-data:
+
+services:
+
+    django:
+      build: ./docker/django
+      container_name: linuxjobber-django
+      command: python3 manage.py runserver 0.0.0.0:8000
+      volumes:
+        - .:/application
+      ports:
+        - "8000:8000"
+      depends_on:
+        - mysql
+
+    adminer:
+      image: adminer
+      ports:
+        - 8080:8080
+
+    mysql:
+      image: mysql:5.6
+      container_name: linuxjobber-mysql
+      working_dir: /application
+      volumes:
+        - db-data:/application
+      environment:
+        - MYSQL_ROOT_PASSWORD=root
+        - MYSQL_DATABASE=scrum
+        - MYSQL_USER=dbuser
+        - MYSQL_PASSWORD=dbpw
+      ports:
+        - "3306:3306"
