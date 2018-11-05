@@ -117,7 +117,7 @@ WSGI_APPLICATION = 'ScrumMaster.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'scrumastrNew',
+        'NAME': 'scrum',
         'USER': 'root',
         'PASSWORD': 'root',
         'HOST': 'dami-mysql',
