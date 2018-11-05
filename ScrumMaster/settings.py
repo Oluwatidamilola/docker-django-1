@@ -33,7 +33,6 @@ ALLOWED_HOSTS = ['*']
 INSTALLED_APPS = [
     'channels',
     'Scrum.apps.ScrumConfig',
-    'ScrumMaster',
     'rest_framework',
     'corsheaders',
     'django.contrib.admin',
@@ -120,7 +119,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'scrumastrNew',
         'USER': 'root',
-        'PASSWORD': 'root',
+        'PASSWORD': '',
         'HOST': 'localhost',
         'PORT': ''
 
@@ -128,7 +127,6 @@ DATABASES = {
 
 
 }
-
 
 
 # Password validation
