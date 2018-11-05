@@ -118,16 +118,17 @@ WSGI_APPLICATION = 'ScrumMaster.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'scrum',
-        'USER': 'dbuser',
-        'PASSWORD': 'dbpw',
-        'HOST': 'linuxjobber-mysql',
-        'PORT': '3306'
+        'NAME': 'scrumastrNew',
+        'USER': 'root',
+        'PASSWORD': 'root',
+        'HOST': 'localhost',
+        'PORT': ''
 
     }
 
 
 }
+
 
 
 # Password validation
