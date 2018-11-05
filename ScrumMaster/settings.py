@@ -119,9 +119,9 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'scrumastrNew',
         'USER': 'root',
-        'PASSWORD': '',
-        'HOST': 'localhost',
-        'PORT': ''
+        'PASSWORD': 'root',
+        'HOST': 'dami-mysql',
+        'PORT': '3306'
 
     }
 
